@@ -7,6 +7,7 @@ if ENV["HEROKU"]
   gem "thin" # Change this to another web server if you want (ie. unicorn, passenger, puma...)
   gem "rails_12factor"
 else
+  ruby "2.1.3"
 
   require 'yaml'
   env = ENV["RAILS_ENV"] || 'development'
