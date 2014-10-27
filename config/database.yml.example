@@ -1,8 +1,8 @@
 login: &login
   adapter: mysql2
-  host: localhost
-  username: root
-  password:
+  host: <%= ENV["DATABASE_HOST"] %>
+  username: <%= ENV["DATABASE_USERNAME"] %>
+  password: <%= ENV["DATABASE_PASSWORD"] %>
 
 
 development:
