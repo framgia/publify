@@ -32,3 +32,4 @@ Gemfile.lock
 /themes/*
 !/themes/bootstrap-2
 gems/
+.versions.conf

@@ -363,24 +363,24 @@ describe ArticlesController, "redirecting" do
   describe 'accessing old-style URL with "articles" as the first part' do
     it 'should redirect to article' do
       create(:blog)
-      article = create(:article, :permalink => 'second-blog-article', :published_at => '2004-04-01 02:00:00', :updated_at => '2004-04-01 02:00:00', :created_at => '2004-04-01 02:00:00')
-      get :redirect, :from => "articles/2004/04/01/second-blog-article"
+      article = create(:article, permalink: "second-blog-article", published_at: "2004-04-01 02:00:00 +0000", updated_at: "2004-04-01 02:00:00 +0000", created_at: "2004-04-01 02:00:00 +0000")
+      get :redirect, from: "articles/2004/04/01/second-blog-article"
       assert_response 301
       response.should redirect_to("http://myblog.net/2004/04/01/second-blog-article")
     end
 
     it 'should redirect to article with url_root' do
-      b = build_stubbed(:blog, :base_url => "http://test.host/blog")
-      article = create(:article, :permalink => 'second-blog-article', :published_at => '2004-04-01 02:00:00', :updated_at => '2004-04-01 02:00:00', :created_at => '2004-04-01 02:00:00')
-      get :redirect, :from => "articles/2004/04/01/second-blog-article"
+      b = build_stubbed(:blog, base_url: "http://test.host/blog")
+      article = create(:article, permalink: "second-blog-article", published_at: "2004-04-01 02:00:00 +0000", updated_at: "2004-04-01 02:00:00 +0000", created_at: "2004-04-01 02:00:00 +0000")
+      get :redirect, from: "articles/2004/04/01/second-blog-article"
       assert_response 301
       response.should redirect_to("http://test.host/blog/2004/04/01/second-blog-article")
     end
 
     it 'should redirect to article with articles in url_root' do
-      b = build_stubbed(:blog, :base_url => "http://test.host/aaa/articles/bbb")
-      article = create(:article, :permalink => 'second-blog-article', :published_at => '2004-04-01 02:00:00', :updated_at => '2004-04-01 02:00:00', :created_at => '2004-04-01 02:00:00')
-      get :redirect, :from => "articles/2004/04/01/second-blog-article"
+      b = build_stubbed(:blog, base_url: "http://test.host/aaa/articles/bbb")
+      article = create(:article, permalink: "second-blog-article", published_at: "2004-04-01 02:00:00 +0000", updated_at: "2004-04-01 02:00:00 +0000", created_at: "2004-04-01 02:00:00 +0000")
+      get :redirect, from: "articles/2004/04/01/second-blog-article"
       assert_response 301
       response.should redirect_to("http://test.host/aaa/articles/bbb/2004/04/01/second-blog-article")
     end
@@ -395,7 +395,7 @@ describe ArticlesController, "redirecting" do
     end
 
     context "with an article" do
-      let!(:article) { create(:article, :permalink => 'second-blog-article', :published_at => '2004-04-01 02:00:00', :updated_at => '2004-04-01 02:00:00', :created_at => '2004-04-01 02:00:00') }
+      let!(:article) { create(:article, permalink: "second-blog-article", published_at: "2004-04-01 02:00:00 +0000", updated_at: "2004-04-01 02:00:00 +0000", created_at: "2004-04-01 02:00:00 +0000") }
 
       context "try redirect to an unknow location" do
         before(:each) { get :redirect, from: "#{article.permalink}/foo/bar" }
