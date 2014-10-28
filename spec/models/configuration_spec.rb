@@ -93,8 +93,8 @@ describe 'Given a new blog' do
     blog.should be_send_outbound_pings
   end
 
-  it '#email_from should be publify@example.com' do
-    blog.email_from.should == 'publify@example.com'
+  it "#email_from should be publify@#{ENV['MAIL_DOMAIN']}" do
+    blog.email_from.should == "publify@#{ENV['MAIL_DOMAIN']}"
   end
 
   it '#date format should be day/month/year hour:minute' do

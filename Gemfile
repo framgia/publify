@@ -7,7 +7,7 @@ if ENV["HEROKU"]
   gem "thin" # Change this to another web server if you want (ie. unicorn, passenger, puma...)
   gem "rails_12factor"
 else
-  ruby "2.1.3"
+  ruby "2.1.4"
 
   require 'yaml'
   env = ENV["RAILS_ENV"] || 'development'
@@ -37,7 +37,7 @@ else
   end
 end
 
-gem 'rails', '~> 4.1.1'
+gem 'rails', '~> 4.1.6'
 gem 'htmlentities'
 gem 'bluecloth', '~> 2.1'
 gem 'coderay', '~> 1.1.0'
