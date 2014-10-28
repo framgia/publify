@@ -91,3 +91,8 @@ end
 Dir.glob(File.join(File.dirname(__FILE__), 'themes', '**', "Gemfile")) do |gemfile|
   eval(IO.read(gemfile), binding)
 end
+
+gem "unicorn"
+gem "capistrano-rails"
+gem "capistrano-bundler"
+gem "capistrano-rvm"
