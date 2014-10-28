@@ -84,6 +84,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.99.0'
   gem 'simplecov', :require => false
   gem 'pry-rails'
+  gem 'dotenv-rails'
 end
 
 # Install gems from each theme

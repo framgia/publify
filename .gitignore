@@ -12,6 +12,7 @@ db/*.sqlite*
 .rspec
 installer/rails_installer.yml
 /public/files
+/public/assets
 /public/images/theme
 /public/javascripts/ckeditor/config.js
 /public/javascripts/ckeditor/config.bak
@@ -33,3 +34,4 @@ Gemfile.lock
 !/themes/bootstrap-2
 gems/
 .versions.conf
+.env
