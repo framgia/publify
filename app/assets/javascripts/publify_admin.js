@@ -13,5 +13,6 @@
 //= require admin_publify
 //= require sidebar
 //= require lightbox
+//= require bootstrap-markdown
 
 // Front javascript manifest

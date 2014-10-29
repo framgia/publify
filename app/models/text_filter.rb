@@ -108,4 +108,12 @@ class TextFilter < ActiveRecord::Base
   def to_text_filter
      self
   end
+
+  def use_markdown?
+    markup == "markdown"
+  end
+
+  def use_plain?
+    markup == "none"
+  end
 end
