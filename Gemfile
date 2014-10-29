@@ -70,6 +70,9 @@ gem 'non-stupid-digest-assets'
 # removed from Rails-core as Rails 4.0
 gem 'actionpack-page_caching', '~> 1.0.2'
 gem 'rails-observers', '~> 0.1.2'
+gem "bootstrap_markdown_rails", "~> 0.0.1"
+gem 'redcarpet'
+gem 'pygments.rb'
 
 group :assets do
   gem 'sass-rails', " ~> 4.0.3"
