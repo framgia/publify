@@ -302,7 +302,7 @@ DEPENDENCIES
   mysql2
   non-stupid-digest-assets
   pry-rails
-  rails (~> 4.1.1)
+  rails (~> 4.1.6)
   rails-observers (~> 0.1.2)
   rails-timeago (~> 2.0)
   rails_autolink (~> 1.1.0)
