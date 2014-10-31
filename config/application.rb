@@ -6,6 +6,12 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+if Rails.env.in? %w(development test)
+  path = "config/environments/#{Rails.env}.env"
+  raise "Please setup #{path} first!" unless File.exists? path
+  Dotenv.load path
+end
+
 module Publify
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -14,7 +20,7 @@ module Publify
 
     #define default secret token to avoid information duplication
     $default_token = "08aac1f2d29e54c90efa24a4aefef843ab62da7a2610d193bc0558a50254c7debac56b48ffd0b5990d6ed0cbecc7dc08dce1503b6b864d580758c3c46056729a"
-    
+
     # Setup the cache path
     config.action_controller.page_cache_directory = "#{::Rails.root.to_s}/public/cache/"
     config.cache_store=:file_store, "#{::Rails.root.to_s}/public/cache/"
