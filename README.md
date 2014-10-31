@@ -46,11 +46,10 @@ To install Publify you need the following:
     then
 
     ```bash
-    cp config/database.yml.example config/database.yml
-    cp config/mail.yml.example config/mail.yml
-    cp .env.example .env
+    cp config/environments/development.env.example config/environments/development.env
+    cp config/environments/test.env.example config/environments/test.env
     ```
-3.  Edit `.env` file to add your database name, login and password.
+3.  Edit `config/environments/*.env` file to add your database name, login and password.
 4.  Setup Rails
 
     ```bash
