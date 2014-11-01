@@ -48,9 +48,9 @@ namespace :deploy do
   desc "upload files"
   task :upload do
     on roles(:app) do |host|
-      upload! "config/database.yml.production",
+      upload! "config/database.yml.example",
         "#{shared_path}/config/database.yml"
-      upload! "config/mail.yml.production",
+      upload! "config/mail.yml.example",
         "#{shared_path}/config/mail.yml"
     end
   end
